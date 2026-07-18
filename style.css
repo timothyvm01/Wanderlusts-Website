@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap');
 
 :root {
-    --navy: #17365D;
-    --teal: #3A7D8C;
-    --light-blue: #EEF5F8;
-    --background: #FAFBFC;
-    --text: #1F2933;
-    --gray: #5F6B73;
+    --navy: #16324F;
+    --blue: #1E88E5;
+    --teal: #26A69A;
+    --light-blue: #EAF6FA;
+    --background: #FFFFFF;
+    --text: #263238;
+    --gray: #607D8B;
     --white: #FFFFFF;
-    --border: #D9E2E8;
-    --shadow: 0 4px 15px rgba(0,0,0,0.08);
-    --shadow-hover: 0 8px 20px rgba(0,0,0,0.12);
+    --border: #D9E6EC;
+    --shadow: 0 5px 20px rgba(0,0,0,0.08);
+    --shadow-hover: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 * {
@@ -25,9 +26,9 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    background: var(--background);
     color: var(--text);
-    line-height: 1.7;
+    background: var(--background);
+    line-height: 1.6;
 }
 
 a {
@@ -40,25 +41,39 @@ ul {
 }
 
 
-/* Header / Navigation */
+/* Header */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 18px 60px;
+    background: var(--white);
     border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
     font-family: "Merriweather", serif;
-    font-size: 1.35rem;
+    font-size: 1.6rem;
     color: var(--navy);
+    font-weight: 700;
 }
+
+.slogan {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+
+/* Navigation */
 
 .nav-menu {
     display: flex;
@@ -71,9 +86,8 @@ header {
 }
 
 .nav-menu > li > a {
-    color: var(--text);
     font-weight: 500;
-    padding: 8px 5px;
+    padding: 10px 5px;
     transition: 0.2s;
 }
 
@@ -82,29 +96,23 @@ header {
 }
 
 
-/* Dropdown Navigation */
+/* Dropdown */
 
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 42px;
     left: 0;
     min-width: 260px;
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     padding: 10px 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(8px);
+    transform: translateY(10px);
     transition: 0.2s;
 }
-
-.nav-menu > li:last-child > .dropdown-menu {
-    left: auto;
-    right: 0;
-}
-
 
 .dropdown:hover > .dropdown-menu {
     opacity: 1;
@@ -118,7 +126,7 @@ header {
 
 .dropdown-menu a {
     display: block;
-    padding: 10px 18px;
+    padding: 11px 18px;
     white-space: nowrap;
 }
 
@@ -132,15 +140,21 @@ header {
     left: 100%;
 }
 
-/* Hero Section */
+.nav-menu > li:last-child > .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+
+/* Hero */
 
 .hero {
-    min-height: 520px;
+    min-height: 620px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: var(--light-blue);
+    background: linear-gradient(135deg, var(--light-blue), #FFFFFF);
     padding: 80px 20px;
 }
 
@@ -150,14 +164,14 @@ header {
 
 .hero h1 {
     font-family: "Merriweather", serif;
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--navy);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.15rem;
     color: var(--gray);
+    font-size: 1.2rem;
     margin-bottom: 35px;
 }
 
@@ -172,22 +186,23 @@ header {
 
 .button {
     display: inline-block;
-    padding: 12px 28px;
-    border-radius: 6px;
-    background: var(--navy);
+    padding: 13px 30px;
+    border-radius: 30px;
+    background: var(--teal);
     color: white;
     font-weight: 600;
     transition: 0.2s;
 }
 
 .button:hover {
-    background: var(--teal);
+    transform: translateY(-3px);
+    background: var(--blue);
 }
 
 .button.secondary {
     background: white;
     color: var(--navy);
-    border: 1px solid var(--navy);
+    border: 2px solid var(--navy);
 }
 
 .button.secondary:hover {
@@ -198,7 +213,7 @@ header {
 /* General Sections */
 
 section {
-    padding: 70px 60px;
+    padding: 80px 60px;
 }
 
 section h2 {
@@ -206,14 +221,14 @@ section h2 {
     color: var(--navy);
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 
-/* Introduction Section */
+/* Introduction */
 
 .introduction {
-    max-width: 1000px;
+    max-width: 950px;
     margin: auto;
     text-align: center;
 }
@@ -223,32 +238,33 @@ section h2 {
 }
 
 
-/* Resource Cards */
+/* Cards */
 
 .card-container {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
 }
 
 .card {
-    background: var(--white);
-    padding: 30px;
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    transition: 0.2s;
+    text-align: center;
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
 }
 
 .card h3 {
     color: var(--navy);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .card p {
@@ -258,7 +274,7 @@ section h2 {
 
 /* Featured Topic */
 
-.featured-topic {
+.featured {
     background: var(--light-blue);
 }
 
@@ -267,7 +283,8 @@ section h2 {
     margin: auto;
     background: white;
     padding: 40px;
-    border-left: 5px solid var(--teal);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
 }
 
 .topic-box h3 {
@@ -276,25 +293,18 @@ section h2 {
 }
 
 
-/* Media Section */
+/* Media */
 
 .video-placeholder {
     max-width: 900px;
     height: 420px;
     margin: auto;
-    background: #E1EBF0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: #E6F1F5;
+    border-radius: 15px;
     color: var(--gray);
-    border-radius: 8px;
-}
-
-
-/* Call To Action */
-
-.cta {
-    text-align: center;
 }
 
 
@@ -303,10 +313,10 @@ section h2 {
 footer {
     background: var(--navy);
     color: white;
-    padding: 50px 60px;
+    padding: 60px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
 }
 
 footer h3,
@@ -315,7 +325,7 @@ footer h4 {
 }
 
 footer a {
-    color: #DCEAF3;
+    color: #D9E6EC;
 }
 
 footer a:hover {
@@ -323,16 +333,30 @@ footer a:hover {
 }
 
 .disclaimer {
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    grid-column: 1/-1;
     padding-top: 20px;
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 
 
-/* Responsive Design */
+/* Breadcrumb */
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 60px;
+    color: var(--gray);
+}
+
+.breadcrumb a {
+    color: var(--teal);
+}
+
+
+/* Responsive */
 
 @media(max-width:900px) {
+
     header {
         flex-direction: column;
         gap: 20px;
@@ -351,6 +375,6 @@ footer a:hover {
     }
 
     section {
-        padding: 50px 25px;
+        padding: 60px 25px;
     }
 }
